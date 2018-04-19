@@ -17,4 +17,4 @@ context = zmq.Context()
 socket = context.socket(zmq.PUB)
 socket.bind("tcp://*:5556")
 
-socket.send_string("%s %s %s" % (temp, press, hum))
+socket.send_string("%s %s %s\0" % (temp, press, hum))
