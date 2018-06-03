@@ -20,6 +20,9 @@ class URLPost():
 
 	def getRandomHumidity(self):
 		return random.randint(0,101)
+	
+	def getRandomPressure(self):
+		return random.randint(20,100)
 
 	def getLocation(self):
 		r = requests.get('https://api.ipdata.co')
@@ -28,9 +31,10 @@ class URLPost():
 				'country':r['country_name']	}
 
 	def randomizeData(self):
-		self.data = {'temperature' : getRandomTemp(),
-				'humidity'	  : getRandomHumidity(),
-				'location' : getLocation()
+		self.data = {'temperature' : self.getRandomTemp(),
+				'humidity'	  : self.getRandomHumidity(),
+				'location' : self.getLocation(),
+				'pressure' : self.getRandomPressure()
 		}
 	
 	def send(self):
