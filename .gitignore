@@ -1,3 +1,6 @@
 node_modules
 resources
 draft-layouts
+
+env
+__pycache__
